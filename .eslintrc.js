@@ -29,6 +29,7 @@ module.exports = {
                 forbidDefaultForRequired: false,
                 ignoreFunctionalComponents: false
             }
-        ]
+        ],
+        'react-native/no-inline-styles': 0
     }
 };

@@ -11,8 +11,10 @@
         "prettier:write": "npx prettier --write **/*.{js,jsx,ts,tsx,json} && npx prettier --write *.{js,jsx,ts,tsx,json}"
     },
     "dependencies": {
+        "@react-native-community/datetimepicker": "^3.0.9",
         "@react-native-community/eslint-config": "^1.1.0",
         "@types/react-native-vector-icons": "^6.4.6",
+        "date-fns-tz": "^1.1.1",
         "eslint": "^7.18.0",
         "jest": "^25.1.0",
         "metro-react-native-babel-preset": "^0.59.0",

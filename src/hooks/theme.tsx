@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useContext, useState } from 'react';
 import { Appearance } from 'react-native';
 
-const themes = {
+export const themes = {
     light: {
         key: 'light',
         primary: '#83B240',
@@ -136,7 +136,7 @@ const themes = {
     }
 };
 
-interface ThemeState {
+export interface IThemeProps {
     key: string;
     primary: string;
     primaryVariant: string;
@@ -169,17 +169,17 @@ interface ThemeState {
 
 interface ThemeContextState {
     toggleTheme(key: string): void;
-    theme: object;
+    theme: IThemeProps;
 }
 
 const ThemeContext = createContext<ThemeContextState>({} as ThemeContextState);
 
 const ThemeProvider = ({ children }: any) => {
-    const [theme, setTheme] = useState<ThemeState>(
+    const [theme, setTheme] = useState<IThemeProps>(
         Appearance.getColorScheme() === 'dark' ? themes.dark : themes.light
     );
 
-    const selectTheme = (key: string): ThemeState => {
+    const selectTheme = (key: string): IThemeProps => {
         switch (key) {
             case 'light':
                 return themes.light;
